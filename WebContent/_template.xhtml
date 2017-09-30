@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Sistermas de Notas Ficais</title>
+
+	<!-- 	para utilizar ajax, porém se tiver a tag head é criado automaticamente -->
+	<h:outputScript name="jsf.js" library="javax.faces" target="head" />
+	<h:outputStylesheet name="style.css" library="css" />
+
+</h:head>
+<h:body>
+	<div id="cabecalho">
+		<h:graphicImage name="logo-uber.png" library="imagem" id="logoCompany" />
+		<div id="usuarioLogado">
+			<h:form>
+	Usuario Logado como #{usuarioLogadoBean.usuario.login}
+		<h:commandLink value="Deslogar" action="#{usuarioLogadoBean.logOff}" />
+			</h:form>
+		</div>
+	</div>
+
+
+	<div id="conteudo">
+		<ui:insert name="corpo"/>
+	</div>
+
+	<div id="rodape">
+	
+	Copy Right 2018 <ui:insert name="nomePagina"/>
+	
+	
+	</div>
+
+</h:body>
+</html>
